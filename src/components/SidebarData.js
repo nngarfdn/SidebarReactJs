@@ -3,6 +3,13 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
+import * as GiIcons from 'react-icons/gi';
+import firebase from "../firebase";
+
+
+const handleLogout = () => {
+  firebase.auth().signOut();
+};
 
 export const SidebarData = [
   {
@@ -11,75 +18,46 @@ export const SidebarData = [
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text',
 
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
-
-     subNav: [
-         {
-           title: 'Users',
-           path: '/home/users',
-           icon: <IoIcons.IoMdPeople />,
-        },
-         {
-           title: 'Revenue',
-           path: '/home/revenue',
-           icon: <IoIcons.IoIosPaper />
-         }
-       ]
+    // iconClosed: <RiIcons.RiArrowDownSFill />,
+    // iconOpened: <RiIcons.RiArrowUpSFill />,
 
   },
+  
   {
-    title: 'Reports',
-    path: '/reports',
-    icon: <IoIcons.IoIosPaper />,
+    title: 'Data Anggur',
+    path: '/dataanggur',
+    icon: <GiIcons.GiGrapes/>,
     cName: 'nav-text'
   },
   {
-    title: 'Products',
-    path: '/products',
-    icon: <FaIcons.FaCartPlus />,
-    cName: 'nav-text',
-
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
-
-     subNav: [
-         {
-           title: 'Products 1',
-           path: '/products/products1',
-           icon: <FaIcons.FaCartPlus />,
-           cName: 'sub-nav'
-         },
-         {
-           title: 'Products 2',
-           path: '/products/products2',
-           icon: <FaIcons.FaCartPlus />,
-           cName: 'sub-nav'
-         },
-         {
-           title: 'Products 3',
-           path: '/products/products3',
-           icon: <FaIcons.FaCartPlus />,
-         }
-       ]
-
-  },
-  {
-    title: 'Team',
-    path: '/team',
-    icon: <IoIcons.IoMdPeople />,
+    title: 'Tambah Anggur',
+    path: '/tambahanggur',
+    icon: <RiIcons.RiAddLine/>,
     cName: 'nav-text'
   },
   {
-    title: 'Messages',
-    path: '/messages',
-    icon: <FaIcons.FaEnvelopeOpenText />,
+    title: 'Daftar Toko',
+    path: '/toko',
+    icon: <RiIcons.RiStore3Fill />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Tambah Toko',
+    path: '/tambahtoko',
+    icon: <RiIcons.RiAddLine />,
     cName: 'nav-text'
   },
   {
     title: 'Support',
     path: '/support',
     icon: <IoIcons.IoMdHelpCircle />,
+    cName: 'nav-text'
+  },
+
+  {
+    title: 'Keluar',
+    onclick : {handleLogout},
+    icon: <IoIcons.IoMdExit />,
     cName: 'nav-text'
   }
 ];

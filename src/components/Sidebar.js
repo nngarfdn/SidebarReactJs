@@ -7,20 +7,19 @@ import './Sidebar.css';
 import { IconContext } from 'react-icons';
 import  SubMenu from './SubMenu'
 
-
 function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <>
-    
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='sidebar'>
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <h3 className="centerh1">Admin</h3>
+        
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} >
           <ul className='nav-menu-items' >
