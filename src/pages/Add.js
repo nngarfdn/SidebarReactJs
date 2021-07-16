@@ -69,6 +69,7 @@ handleUpload = () =>{
       uploadTask.snapshot.ref.getDownloadURL().then((url) =>{
         this.setState({
           foto : url
+        
         })
       })
     document.getElementById("file").value = null
@@ -110,6 +111,7 @@ handleUpload = () =>{
         console.log(err.response);
       });
     event.preventDefault();
+
    
   }
 
@@ -132,10 +134,10 @@ handleUpload = () =>{
     return (
     <div className="">
 
-<div className="App">
+{/* <div className="App">
         <h4>upload image</h4>
         <label>
-          Choose file
+         Pilih Foto
         <input type="file" id="file" onChange={this.handleChange} />        
         </label>
 
@@ -145,10 +147,10 @@ handleUpload = () =>{
           className="ref"
           src={this.state.downloadURL || "https://via.placeholder.com/400x300"}
           alt="Uploaded Images"
-          height="300"
-          width="400"
+          height="100"
+          width="300"
         />
-      </div>
+      </div> */}
 
       <Container style={{ marginTop: "100px" }} className="marhor">
         <Form>
@@ -180,6 +182,7 @@ handleUpload = () =>{
             />
           </Form.Group>
           <Form.Group controlId="formBasicDeskripsi" style={{ width: "100%"} ,{marginLeft:"5%" }}>
+
             <Form.Label>Deskripsi</Form.Label>
             <Form.Control
               type="text"
@@ -192,16 +195,31 @@ handleUpload = () =>{
             />
           </Form.Group>
           <Form.Group controlId="formBasicFoto" style={{ width: "100%"} ,{marginLeft:"5%" }}>
-            <Form.Label>Foto</Form.Label>
+
+          <label>
+         Pilih Foto
+        <input type="file" id="file" onChange={this.handleChange} />        
+        </label>
+
+        <Button className="button" variant="outline-primary" onClick={this.handleUpload}>Upload</Button>
+
+        <img
+          className="ref"
+          src={this.state.foto || "https://via.placeholder.com/140x100"}
+          alt="Uploaded Images"
+          height="100"
+          width="140"
+        />
+            {/* <Form.Label>Foto</Form.Label>
             <Form.Control
               type="text"
               placeholder="Masukkan url foto"
               name="foto"
               value={this.state.foto}
               onChange={this.onChange}
-            />
+            /> */}
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={this.handleSubmit} className="btn btn-primary mr-xl-2 w-50" style={{marginLeft:"25%" }}>
+          <Button variant="primary" type="submit" onClick={this.handleSubmit} className="btn btn-primary mr-xl-2 w-50 mb-4" style={{marginLeft:"25%" }}>
             Tambah
           </Button>
         </Form>

@@ -101,6 +101,7 @@ export const Actions = () => {
               user.namailmiah = userData.namailmiah;
               user.deskripsi = userData.deskripsi;
               user.foto = userData.foto;
+    
               return user;
             }
             return user;
